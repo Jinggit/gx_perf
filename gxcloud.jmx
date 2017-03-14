@@ -53,8 +53,6 @@
           </elementProp>
           <stringProp name="HTTPSampler.domain">${SERVER}</stringProp>
           <stringProp name="HTTPSampler.port">443</stringProp>
-          <stringProp name="HTTPSampler.proxyHost">127.0.0.1</stringProp>
-          <stringProp name="HTTPSampler.proxyPort">8888</stringProp>
           <stringProp name="HTTPSampler.connect_timeout">60000</stringProp>
           <stringProp name="HTTPSampler.response_timeout">60000</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
@@ -66,7 +64,7 @@
         <hashTree/>
         <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
           <collectionProp name="CookieManager.cookies"/>
-          <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
         </CookieManager>
         <hashTree/>
         <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Global Variables" enabled="true">
@@ -122,7 +120,7 @@
         <hashTree/>
         <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Once Only Controller" enabled="true"/>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="DeviceRegister" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="DeviceRegister" enabled="false">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
               <collectionProp name="Arguments.arguments">
@@ -214,7 +212,7 @@ vars.put(&quot;DEVICEID&quot;,reverse_deviceid);</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">account=gcOAlkv%2B%2FL7dFIWZ6LxY2KoKhMvcuFvi2rBR5RqKumgtHAj6WuOgu9f%2Fk2QdcZI%2BMBC%2FItnRBlkeZ8ytVUCWhD6pYnD9ibDBNONpH9awffdQUUVR2izmhaSP8bRP7WXws1UtNcubaScAt15K6NQMFAdpH2yUbJXud5j2ahry5yU%3D&amp;password=M%2F2PZwoOsaU4aVq%2BjPr2DnKvmm8CJk9c62a0sk5bQNxfomJxzbX3PStubjP8%2FEAn5l85Zbj5R8OCGbkyeOTEoIK4KucDbhkSKyhCO%2BhzmLB2g05HHTiD%2FjZnZETbwdQ7R96Uhr2KPbdXL1V%2BmCtGA%2BIAiCcfvsN7tfI%2BZ2x%2F6ok%3D&amp;captcha=&amp;rememberme=true</stringProp>
+                  <stringProp name="Argument.value">account=LIaqrwtElE4HwpMonNBFiTvox9MFtFt7QDZ%2B%2Bj9E1Q1545wIInyZnhrsYUkdyunVXZzxfcEayzEPjrK5Wf5hpCoiOxMxl4PiAVvPC5qa2ITS7KbnxBvMbUC7kNJfD%2By4i04d7PBxKqMB6cQmMTdyy60H8yMf9szOiW4q99hwQ%2B4%3D&amp;password=NJQhEUHZBwl3TWrKkx9Va7hDqAsWDzMS%2FajC7ko8YUDP89LkE7In78CjuJkNafkXqslW%2Bwj2YGwc4th2rYYeCssviVK4LN4%2F74hDWMK7sASwkFl6TpQ9rcNQysxZq4u40p0I9M1PLwTTCd1k82OJjy65Yhxhf3s3tNqvWsWMMoY%3D&amp;captcha=&amp;rememberme=true</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -270,7 +268,7 @@ vars.put(&quot;DEVICEID&quot;,reverse_deviceid);</stringProp>
               <intProp name="Assertion.test_type">2</intProp>
             </ResponseAssertion>
             <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor for USERTOKEN" enabled="true">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor for USERTOKEN" enabled="false">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
               <stringProp name="RegexExtractor.refname">RESP_USERTOKEN</stringProp>
               <stringProp name="RegexExtractor.regex">&quot;userToken&quot;:&quot;(.*?)&quot;,</stringProp>
@@ -280,7 +278,7 @@ vars.put(&quot;DEVICEID&quot;,reverse_deviceid);</stringProp>
               <stringProp name="Sample.scope">all</stringProp>
             </RegexExtractor>
             <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor for XAUTHTOKEN" enabled="true">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor for XAUTHTOKEN" enabled="false">
               <stringProp name="RegexExtractor.useHeaders">true</stringProp>
               <stringProp name="RegexExtractor.refname">RESP_XAUTHTOKEN</stringProp>
               <stringProp name="RegexExtractor.regex">x-auth-token: (.*?)\n</stringProp>
